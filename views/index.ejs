@@ -1,1 +1,16 @@
-<h1>Home</h1>
+<main>
+    <h1>Welcome to my blog</h1>
+</main>
+<section>
+    <h2>Blogs</h2>
+    <ul>
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<% post._id %>">
+                    <span class="blogTitle"><%= post.title %></span>
+                    <span class="blogDate"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+</section>
